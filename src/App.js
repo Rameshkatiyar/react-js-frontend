@@ -1,26 +1,30 @@
 import React from 'react';
-// import Header from './components/header';
-// import SideBar from './components/sidebar';
-// import UserList from './components/userList';
-// import { Segment } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 import ComponentOne from './components/componentOne';
 import ComponentTwo from './components/componentTwo';
-import Counter from './components/Counter';
+import SearchMovie from './components/SearchMovie';
 
 function App() {
   return (
     <div>
-        {/*<Header user={'Ramesh'}/>*/}
-        {/*<Segment>Welcome to MyBook App!</Segment>*/}
-        {/*<SideBar/>*/}
-        {/*<UserList/>*/}
-        <div>
-            <Counter/>
-            <br/>
-            <ComponentOne/>
-            <br/>
-            <ComponentTwo/>
-        </div>
+        <Grid>
+            <Grid.Row></Grid.Row>
+            <Grid.Row columns={3}>
+                <Grid.Column></Grid.Column>
+                <Grid.Column><SearchMovie/></Grid.Column>
+                <Grid.Column></Grid.Column>
+            </Grid.Row>
+            <Grid.Row></Grid.Row>
+            <Grid.Row></Grid.Row>
+            <br/><br/>
+            <Grid.Row columns={5}>
+                <Grid.Column></Grid.Column>
+                <Grid.Column><ComponentOne/></Grid.Column>
+                <Grid.Column></Grid.Column>
+                <Grid.Column><ComponentTwo/></Grid.Column>
+                <Grid.Column></Grid.Column>
+            </Grid.Row>
+        </Grid>
     </div>
   );
 }

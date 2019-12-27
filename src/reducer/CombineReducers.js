@@ -1,8 +1,8 @@
-import {combineReducers} from 'redux';
-import UserDataReducer from './UserDataReducer'
+import { combineReducers } from 'redux';
+import MovieLikeReducer from './MovieLikeReducer';
+import SearchMovieReducer from './SearchMovieReducer';
 
-const CombineReducer = {
-    UserDataReducer
-};
-
-export default CombineReducer;
+export default combineReducers({
+    MovieLikeReducer,
+    SearchMovieReducer
+});
