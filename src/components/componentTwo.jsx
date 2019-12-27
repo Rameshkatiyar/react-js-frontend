@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Button, Icon, Label, List } from 'semantic-ui-react'
+import {Card, Button, Icon, Label, List, Loader, Dimmer} from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {likeMovie, dislikeMovie} from "../action/LikeMovieAction";
 
@@ -54,6 +54,7 @@ class ComponentTwo extends React.Component {
                             </Button>
                         </Button>
                     </Card.Content>
+                    <Dimmer active={this.props.loading} inverted><Loader size='massive'>Loading...</Loader></Dimmer>
                 </Card>
             </div>
         );
@@ -67,6 +68,8 @@ const mapStateToProps = (store) => {
         movieType: store.SearchMovieReducer.movieType,
         director: store.SearchMovieReducer.director,
         year: store.SearchMovieReducer.year,
+
+        loading: store.SearchMovieReducer.loading,
 
         like: store.MovieLikeReducer.like,
         dislike: store.MovieLikeReducer.dislike

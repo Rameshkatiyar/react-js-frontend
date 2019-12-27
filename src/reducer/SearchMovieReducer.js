@@ -5,6 +5,7 @@ const initialState = {
     movieType: '',
     director: '',
     year: '',
+    loading: false
 }
 
 const searchMovieReducer = (state = initialState, action) => {
@@ -15,7 +16,12 @@ const searchMovieReducer = (state = initialState, action) => {
         prevState.movieType = action.movieType;
         prevState.director = action.director;
         prevState.year = action.year;
+        prevState.loading = false;
     }
+    if (action.type === SearchMovieAction.START_DATA_FETCHING){
+        prevState.loading = true;
+    }
+
     return prevState;
 };
 
