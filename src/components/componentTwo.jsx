@@ -62,26 +62,26 @@ class ComponentTwo extends React.Component {
 }
 
 //Subscribe To Store (State)
-const mapStateToProps = (store) => {
+const mapStateToProps = (state) => {
     return {
-        name: store.SearchMovieReducer.name,
-        movieType: store.SearchMovieReducer.movieType,
-        director: store.SearchMovieReducer.director,
-        year: store.SearchMovieReducer.year,
+        name: state.SearchMovieReducer.name,
+        movieType: state.SearchMovieReducer.movieType,
+        director: state.SearchMovieReducer.director,
+        year: state.SearchMovieReducer.year,
 
-        loading: store.SearchMovieReducer.loading,
+        loading: state.SearchMovieReducer.loading,
 
-        like: store.MovieLikeReducer.like,
-        dislike: store.MovieLikeReducer.dislike
+        like: state.MovieLikeReducer.like,
+        dislike: state.MovieLikeReducer.dislike
     }
 }
 
 //Dispatch To Store (Reducer)
-const mapDispachToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
         likeCount: () => dispatch(likeMovie),
         dislikeCount: () => dispatch(dislikeMovie)
     }
 };
 
-export default (connect(mapStateToProps, mapDispachToProps)) (ComponentTwo);
+export default (connect(mapStateToProps, mapDispatchToProps)) (ComponentTwo);

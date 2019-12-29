@@ -1,11 +1,11 @@
-//Create constant
+//Action Type Constant
 const LikeMovieAction = {
     LIKE: 'LIKE',
     DISLIKE: 'DISLIKE'
 };
 
 
-//Create Object
+//Create Action Object
 const likeMovie = {
     type: LikeMovieAction.LIKE,
 };

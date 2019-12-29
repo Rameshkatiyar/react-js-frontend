@@ -2,7 +2,6 @@ import React from 'react';
 import {Button, Form} from "semantic-ui-react";
 import {connect} from 'react-redux';
 import {fetchMovieDetails} from "../action/SearchMovieAction";
-// import {getMovieInfo} from '../service/MovieInfoService'
 
 class SearchMovie extends React.Component{
     state = {
@@ -17,11 +16,6 @@ class SearchMovie extends React.Component{
 
     onSubmit(){
         this.props.fetchMovieDetails(this.state.movieName);
-        // getMovieInfo(this.state.movieName).then(
-        //     data => {
-        //         this.props.showMovieDetails(data);
-        //     }
-        // );
     }
 
     render() {
@@ -41,10 +35,10 @@ class SearchMovie extends React.Component{
     }
 }
 
-//Subscribe To Store (State)
-const mapStateToProps = (store) => {
+//Subscribe To Store (state)
+const mapStateToProps = (state) => {
     return {
-        movieDetails: store.SearchMovieReducer.movieDetails
+        movieDetails: state.SearchMovieReducer.movieDetails
     }
 };
 
@@ -52,7 +46,6 @@ const mapStateToProps = (store) => {
 const mapDispachToProps = (dispatch) => {
     return {
         fetchMovieDetails: (movieDetails) => dispatch(fetchMovieDetails(movieDetails)),
-        // showMovieDetails: (movieDetails) => dispatch(showMovieDetails(movieDetails))
     }
 };
 

@@ -1,6 +1,6 @@
 import {getMovieInfo} from '../service/MovieInfoService'
 
-//Create constant
+//Action Type Constant
 const SearchMovieAction = {
     SHOW_MOVIE_DATA: 'SHOW_MOVIE_DATA',
     START_DATA_FETCHING: 'START_DATA_FETCHING'
@@ -20,7 +20,6 @@ const showMovieDetails = movieDetails => ({
     director: movieDetails.director,
     year: movieDetails.year,
 });
-
 
 //THUNK Middleware
 //Action, before going to reducer, it will come at this function then it will send the showMovieDetails action to reducer.
